@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityPipeline.Microsoft.CodeAnalysis.CSharp.Syntax;
 
-public class basicPlayer : MonoBehaviour
+public class BasicPlayer : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10;
     [SerializeField] private float airSpeedMult = 0.8f;

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7974654271521237649}
   - component: {fileID: 2242946445614356440}
   m_Layer: 0
-  m_Name: balance_object
+  m_Name: balance cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4879303311344190512}
   - component: {fileID: 4631786381141753147}
   - component: {fileID: 1591308900007415477}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Radius: 0.35
 --- !u!231 &1591308900007415477
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -116,8 +116,8 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.3712821
-  m_DampingRatio: 0
-  m_Frequency: 4
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!1 &840211103253297184
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 1711212504824416539}
   - component: {fileID: 3206117369237298042}
   - component: {fileID: 6440065757880410958}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Radius: 0.35
 --- !u!231 &6440065757880410958
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -234,8 +234,8 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.39715886
-  m_DampingRatio: 0
-  m_Frequency: 4
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!1 &2015651135867416858
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 4939381042890569929}
   - component: {fileID: 3330345578135172793}
   - component: {fileID: 2991552297939245374}
+  - component: {fileID: 588374212086093770}
   m_Layer: 0
   m_Name: skin
   m_TagString: Untagged
@@ -333,8 +334,8 @@ SpriteShapeRenderer:
   - {fileID: -2413806693520163455, guid: 49949fc1de6eda34cb1d0b4056679414, type: 3}
   - {fileID: -2413806693520163455, guid: 49949fc1de6eda34cb1d0b4056679414, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.0124053955, y: 0.034562886, z: 0}
-    m_Extent: {x: 0.74849916, y: 0.78471947, z: 0}
+    m_Center: {x: 0.0024453998, y: 0.031700134, z: 0}
+    m_Extent: {x: 0.74270904, y: 0.77000797, z: 0}
   m_SpriteSortPoint: 0
 --- !u!114 &3330345578135172793
 MonoBehaviour:
@@ -351,50 +352,50 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -0.4850073, y: -0.4982204, z: 0}
+    - position: {x: -0.5401199, y: -0.55333364, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
       height: 1
       spriteIndex: 0
       corner: 1
-      m_CornerMode: 1
-    - position: {x: -0.48048216, y: 0.5509473, z: 0}
+      m_CornerMode: 2
+    - position: {x: -0.55527943, y: 0.60606116, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
       height: 1
       spriteIndex: 0
       corner: 1
-      m_CornerMode: 1
-    - position: {x: 0.50897855, y: 0.56553984, z: 0}
+      m_CornerMode: 2
+    - position: {x: 0.56015474, y: 0.6167166, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
       height: 1
       spriteIndex: 0
       corner: 1
-      m_CornerMode: 1
-    - position: {x: 0.500976, y: -0.49064636, z: 0}
+      m_CornerMode: 2
+    - position: {x: 0.5579945, y: -0.5349929, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
       height: 1
       spriteIndex: 0
       corner: 1
-      m_CornerMode: 1
+      m_CornerMode: 2
   m_SpriteShape: {fileID: 11400000, guid: 82084bc5bd76de642a3e5d16e3cc1e99, type: 2}
   m_FillPixelPerUnit: 256
   m_StretchTiling: 1
   m_SplineDetail: 16
   m_AdaptiveUV: 1
-  m_StretchUV: 0
+  m_StretchUV: 1
   m_WorldSpaceUV: 0
-  m_CornerAngleThreshold: 30
+  m_CornerAngleThreshold: 75
   m_ColliderDetail: 16
   m_ColliderOffset: 0.5
   m_UpdateCollider: 1
-  m_EnableTangents: 0
+  m_EnableTangents: 1
   m_GeometryCached: 0
   m_UTess2D: 1
   m_UpdateShadow: 0
@@ -405,15 +406,15 @@ MonoBehaviour:
   m_Creator: {fileID: 0}
   m_Modifiers: []
   m_ColliderSegment:
-  - {x: -0.73609376, y: -0.75015664}
-  - {x: -0.66653836, y: 0.30646676}
-  - {x: -0.7294219, y: 0.7973069}
-  - {x: 0.25063056, y: 0.7467499}
-  - {x: 0.7609045, y: 0.8192824}
-  - {x: 0.68783617, y: -0.24584275}
-  - {x: 0.7491034, y: -0.73874575}
-  - {x: -0.23057479, y: -0.68127143}
-  - {x: -0.73609376, y: -0.75015664}
+  - {x: -0.7251041, y: -0.55575216}
+  - {x: -0.74026364, y: 0.60364276}
+  - {x: -0.54283535, y: 0.7911885}
+  - {x: 0.5583873, y: 0.8017082}
+  - {x: 0.74512696, y: 0.6016959}
+  - {x: 0.7429942, y: -0.5353401}
+  - {x: 0.5470929, y: -0.7202008}
+  - {x: -0.5370307, y: -0.73830783}
+  - {x: -0.7251041, y: -0.55575216}
   m_ShadowSegment: []
 --- !u!114 &2991552297939245374
 MonoBehaviour:
@@ -433,6 +434,62 @@ MonoBehaviour:
   - {fileID: 4922616311766954733}
   - {fileID: 1189753020131397468}
   - {fileID: 5118346581634105203}
+--- !u!60 &588374212086093770
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015651135867416858}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.7251041, y: -0.55575216}
+      - {x: -0.74026364, y: 0.60364276}
+      - {x: -0.54283535, y: 0.7911885}
+      - {x: 0.5583873, y: 0.8017082}
+      - {x: 0.74512696, y: 0.6016959}
+      - {x: 0.7429942, y: -0.5353401}
+      - {x: 0.5470929, y: -0.7202008}
+      - {x: -0.5370307, y: -0.73830783}
+      - {x: -0.7251041, y: -0.55575216}
+  m_UseDelaunayMesh: 1
 --- !u!1 &4882613521858798671
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +502,7 @@ GameObject:
   - component: {fileID: 6633462128639071931}
   - component: {fileID: 1706364522314941919}
   - component: {fileID: 2564973476515064591}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +586,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Radius: 0.35
 --- !u!231 &2564973476515064591
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -549,8 +606,8 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.39342642
-  m_DampingRatio: 0
-  m_Frequency: 4
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!1 &5469942142150702057
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +620,7 @@ GameObject:
   - component: {fileID: 8435726844527466030}
   - component: {fileID: 6925773872842924628}
   - component: {fileID: 7337611108557040863}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +704,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.25
+  m_Radius: 0.35
 --- !u!231 &7337611108557040863
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -667,8 +724,8 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.37505117
-  m_DampingRatio: 0
-  m_Frequency: 4
+  m_DampingRatio: 0.1
+  m_Frequency: 5
 --- !u!1 &6494413648631730295
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +741,7 @@ GameObject:
   - component: {fileID: 755742671641543231}
   - component: {fileID: 7452324719171180337}
   - component: {fileID: 8710481933839393138}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: soft balance cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,8 +782,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_AngularDamping: 0.1
+  m_GravityScale: 1.1
   m_Material: {fileID: 6200000, guid: 1ca33d41f505ae2499ef8f3b3cb3c60f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -773,7 +830,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.4
+  m_Radius: 0.3
 --- !u!231 &3764985639820721265
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -793,8 +850,8 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.25754663
-  m_DampingRatio: 0
-  m_Frequency: 120
+  m_DampingRatio: 1
+  m_Frequency: 20
 --- !u!231 &755742671641543231
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -814,8 +871,8 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.26762193
-  m_DampingRatio: 0
-  m_Frequency: 120
+  m_DampingRatio: 1
+  m_Frequency: 20
 --- !u!231 &7452324719171180337
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -835,8 +892,8 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.28617978
-  m_DampingRatio: 0
-  m_Frequency: 120
+  m_DampingRatio: 1
+  m_Frequency: 20
 --- !u!231 &8710481933839393138
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -856,5 +913,5 @@ SpringJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
   m_Distance: 0.2763842
-  m_DampingRatio: 0
-  m_Frequency: 120
+  m_DampingRatio: 1
+  m_Frequency: 20

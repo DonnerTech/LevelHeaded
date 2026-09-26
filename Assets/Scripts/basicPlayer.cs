@@ -1,7 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityPipeline.Microsoft.CodeAnalysis.CSharp.Syntax;
 
 public class BasicPlayer : MonoBehaviour
 {
@@ -20,14 +20,14 @@ public class BasicPlayer : MonoBehaviour
     [SerializeField] float ki = 10f;
     [SerializeField] float kd = 20f;
     [SerializeField] private LayerMask walkableMask;
-
     public InputAction moveAction;
     public InputAction jumpAction;
-
     private Rigidbody2D rb;
-
     private float legI;
     private float legError;
+    public Vector2 FootPos { get; private set; }
+    public float FacingDirection { get; private set; }
+    private bool isGrounded;
 
     void OnEnable()
     {
@@ -45,11 +45,12 @@ public class BasicPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        FacingDirection = 1;
     }
 
     private void Update()
     {
-        if (jumpAction.WasPressedThisFrame() && isGrounded(out _))
+        if (jumpAction.WasPressedThisFrame() && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
@@ -61,7 +62,9 @@ public class BasicPlayer : MonoBehaviour
         float dist = 0;
         float moveMult = 1;
 
-        if (isGrounded(out dist))
+        isGrounded = IsGrounded(out dist);
+
+        if (isGrounded)
         {
 
             moveMult *= airSpeedMult;
@@ -69,9 +72,25 @@ public class BasicPlayer : MonoBehaviour
             // apply hover force
             hoverPIDF(dist);
         }
+        else
+        {
+            dist = legHeight;
+        }
 
         Vector2 moveDirection = moveAction.ReadValue<Vector2>();
         rb.AddForce(Vector2.right * moveDirection * moveSpeed * moveMult);
+
+        FootPos = hip.position - new Vector3(0, dist, 0);
+
+        if (moveDirection.x != 0)
+        {
+            FacingDirection = moveDirection.x / Mathf.Abs(moveDirection.x);
+        }
+
+        //if (moveDirection.x != 0)
+        //{
+        //    FacingDirection = rb.linearVelocity.x / Mathf.Abs(rb.linearVelocity.x);
+        //}
     }
 
     void hoverPIDF(float dist)
@@ -95,7 +114,7 @@ public class BasicPlayer : MonoBehaviour
         rb.AddForce(Vector2.up * force);
     }
 
-    bool isGrounded(out float dist)
+    bool IsGrounded(out float dist)
     {
         RaycastHit2D hit = Physics2D.CircleCast(hip.position, footSize, Vector2.down, legHeight, walkableMask);
 
@@ -111,7 +130,7 @@ public class BasicPlayer : MonoBehaviour
         Gizmos.DrawLine(hip.position + Vector3.right * footSize, hip.position + Vector3.down * legHeight + Vector3.right * footSize);
         Gizmos.DrawLine(hip.position + Vector3.left * footSize, hip.position + Vector3.down * legHeight + Vector3.left * footSize);
         float dist = 0;
-        isGrounded(out dist);
+        IsGrounded(out dist);
         Gizmos.color = Color.rebeccaPurple;
         Gizmos.DrawLine(hip.position + Vector3.down * dist + Vector3.right * footSize, hip.position + Vector3.down * dist + Vector3.left * footSize);
         Gizmos.color = Color.aliceBlue;

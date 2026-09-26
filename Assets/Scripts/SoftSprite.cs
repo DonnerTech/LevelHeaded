@@ -25,7 +25,7 @@ public class SoftSprite : MonoBehaviour
         for (int i = 0; i < points.Length; i++)
         {
             {
-                Transform t = points[i];
+                Transform t = points[points.Length - i - 1];
 
                 Vector2 vertex = t.localPosition;
                 Vector2 towardCenter = (Vector2.zero - vertex).normalized;
@@ -40,9 +40,9 @@ public class SoftSprite : MonoBehaviour
                     spriteShape.spline.SetPosition(i, vertex - towardCenter * (colliderRadius + splineOffset));
                 }
 
-                Vector2 lt = spriteShape.spline.GetLeftTangent(i);
+                Vector2 rt = spriteShape.spline.GetRightTangent(i);
 
-                Vector2 newRt = Vector2.Perpendicular(towardCenter) * lt.magnitude;
+                Vector2 newRt = Vector2.Perpendicular(towardCenter) * rt.magnitude;
                 Vector2 newLt = Vector2.zero - newRt;
 
                 spriteShape.spline.SetRightTangent(i, newRt);
